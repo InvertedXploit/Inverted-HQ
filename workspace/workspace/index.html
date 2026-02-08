@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inverted HQ</title>
+<link rel="icon" type="image/png" href="/assets/images/invertedhq.png">
+<link rel="stylesheet" href="/assets/cdn/main.css">
+</head>
+<body>
+
+<canvas id="gridBg"></canvas>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="ripple-container" id="rippleContainer"></div>
+
+<div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span class="toast-text">Copied to clipboard</span>
+</div>
+
+<header id="header">
+    <nav>
+        <span class="logo" onclick="smoothNav('#home')">
+            <div class="logo-icon">
+                <img src="/assets/images/invertedhq.png" alt="Inverted">
+            </div>
+            <span class="logo-text">Inverted</span>
+        </span>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#community">Community</a></li>
+        </ul>
+        <span class="header-cta" onclick="window.open('https://discord.gg/vVJU3bxJdJ','_blank')">Join Discord</span>
+    </nav>
+</header>
+
+<section class="hero-section" id="home">
+    <div class="hero-content">
+        <h1>
+            <span class="text-white glitch" data-text="Inverted">Inverted</span><br>
+            <span class="text-purple">HQ</span>
+        </h1>
+        <p class="hero-desc">Inverted HQ is a Roblox community centered around exploiting, glitching, and making Backdoored games. We push the boundaries of what's possible inside the Roblox engine — building tools, sharing knowledge, and creating experiences that challenge the norm. Whether you're here to learn, collaborate, or just break things, you're in the right place.</p>
+    </div>
+    <div class="hero-actions">
+        <span class="btn-primary" onclick="window.open('https://discord.gg/vVJU3bxJdJ','_blank')">Join Community</span>
+        <span class="btn-secondary" onclick="smoothNav('#project')">View Project</span>
+    </div>
+    <div class="hero-script-box">
+        <div class="script-box-label">Quick Require</div>
+        <div class="script-box">
+            <code id="heroScript">require(placeholderid)</code>
+            <button class="copy-btn" onclick="copyText('require(placeholderid)', this)">Copy</button>
+        </div>
+    </div>
+    <div class="scroll-indicator" onclick="smoothNav('#features')">
+        <div class="mouse"></div>
+        <span>Scroll</span>
+    </div>
+</section>
+
+<div class="marquee-strip">
+    <div class="marquee-inner">
+        <span>EXPLOITING</span><span class="sep">◆</span>
+        <span>GLITCHING</span><span class="sep">◆</span>
+        <span>BACKDOORS</span><span class="sep">◆</span>
+        <span>LUAU</span><span class="sep">◆</span>
+        <span>SERVER SIDE</span><span class="sep">◆</span>
+        <span>EXECUTORS</span><span class="sep">◆</span>
+        <span>SCRIPTS</span><span class="sep">◆</span>
+        <span>COMMUNITY</span><span class="sep">◆</span>
+        <span>EXPLOITING</span><span class="sep">◆</span>
+        <span>GLITCHING</span><span class="sep">◆</span>
+        <span>BACKDOORS</span><span class="sep">◆</span>
+        <span>LUAU</span><span class="sep">◆</span>
+        <span>SERVER SIDE</span><span class="sep">◆</span>
+        <span>EXECUTORS</span><span class="sep">◆</span>
+        <span>SCRIPTS</span><span class="sep">◆</span>
+        <span>COMMUNITY</span><span class="sep">◆</span>
+    </div>
+</div>
+
+<div class="stats-strip" id="statsStrip">
+    <div class="stat-item">
+        <div class="stat-tooltip">Members in server</div>
+        <div class="stat-num" data-target="100" data-suffix="+">0</div>
+        <div class="stat-label">Members</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-tooltip">Requires in library</div>
+        <div class="stat-num" data-target="50" data-suffix="+">0</div>
+        <div class="stat-label">Requires</div>
+    </div>
+</div>
+
+<section class="features-section" id="features">
+    <div class="section-header">
+        <div class="tag">What We Offer</div>
+        <h2>Built For Exploiters</h2>
+        <p>Tools and resources for the Roblox exploiting community</p>
+    </div>
+    <div class="features-grid">
+        <div class="feature-card" data-anim>
+            <div class="feature-icon">⚡</div>
+            <h3>SS Executor</h3>
+            <p>Server-side script execution with full LUAU support and real-time feedback.</p>
+        </div>
+        <div class="feature-card" data-anim>
+            <div class="feature-icon">🔓</div>
+            <h3>Backdoor Access</h3>
+            <p>Explore and utilize backdoored games with our curated toolset and guides.</p>
+        </div>
+        <div class="feature-card" data-anim>
+            <div class="feature-icon">📜</div>
+            <h3>Script Library</h3>
+            <p>Growing collection of tested scripts ready to deploy across various games.</p>
+        </div>
+        <div class="feature-card" data-anim>
+            <div class="feature-icon">🛡️</div>
+            <h3>Active Community</h3>
+            <p>Get help, share discoveries, and collaborate with experienced members.</p>
+        </div>
+        <div class="feature-card" data-anim>
+            <div class="feature-icon">🔧</div>
+            <h3>Custom Tools</h3>
+            <p>In-house built tools designed specifically for Roblox manipulation and testing.</p>
+        </div>
+        <div class="feature-card" data-anim>
+            <div class="feature-icon">📡</div>
+            <h3>Live Updates</h3>
+            <p>Stay informed with real-time updates on patches, new exploits, and community news.</p>
+        </div>
+    </div>
+</section>
+
+<section class="profile-section" id="profile">
+    <div class="section-header">
+        <div class="tag">Owner</div>
+        <h2>Profile</h2>
+        <p>Real-time Discord presence</p>
+    </div>
+    <div class="discord-profile-card" id="profileCard" data-anim>
+        <div class="dp-banner" id="dpBanner">
+            <div class="dp-banner-overlay"></div>
+        </div>
+        <div class="dp-body">
+            <div class="dp-header">
+                <div class="dp-avatar-wrap">
+                    <img class="dp-avatar" id="dpAvatar" src="" alt="Avatar" draggable="false">
+                    <div class="dp-status-indicator" id="dpStatusIndicator">
+                        <svg viewBox="0 0 16 16" id="dpStatusSvg" width="16" height="16">
+                            <circle cx="8" cy="8" r="8" fill="#80848e"/>
+                            <circle cx="8" cy="8" r="4" fill="#0c0a14"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dp-user-info">
+                    <div class="dp-name-row">
+                        <span class="dp-display-name" id="dpDisplayName">Loading...</span>
+                        <div class="dp-badges">
+                            <span class="dp-badge" title="Owner">👑</span>
+                        </div>
+                    </div>
+                    <div class="dp-username" id="dpUsername">loading...</div>
+                    <div class="dp-status-row">
+                        <div class="dp-status-dot" id="dpStatusDot"></div>
+                        <span class="dp-status-label" id="dpStatusLabel">Fetching...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dp-custom-status" id="dpCustomStatus" style="display:none">
+                <span class="dp-custom-emoji" id="dpCustomEmoji"></span>
+                <span class="dp-custom-text" id="dpCustomText"></span>
+            </div>
+
+            <div class="dp-divider"></div>
+
+            <div class="dp-activity-section" id="dpActivitySection" style="display:none">
+                <div class="dp-activity-header" id="dpActivityHeader">PLAYING A GAME</div>
+                <div class="dp-activity-body">
+                    <div class="dp-activity-images" id="dpActivityImages" style="display:none">
+                        <img class="dp-activity-large" id="dpActivityLarge" src="" alt="" draggable="false">
+                        <img class="dp-activity-small" id="dpActivitySmall" src="" alt="" draggable="false" style="display:none">
+                    </div>
+                    <div class="dp-activity-info">
+                        <div class="dp-activity-name" id="dpActivityName"></div>
+                        <div class="dp-activity-details" id="dpActivityDetails"></div>
+                        <div class="dp-activity-state" id="dpActivityState"></div>
+                        <div class="dp-activity-time" id="dpActivityTime"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dp-spotify-section" id="dpSpotifySection" style="display:none">
+                <div class="dp-spotify-header">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                    LISTENING TO SPOTIFY
+                </div>
+                <div class="dp-spotify-body">
+                    <img class="dp-spotify-art" id="dpSpotifyArt" src="" alt="" draggable="false">
+                    <div class="dp-spotify-info">
+                        <div class="dp-spotify-song" id="dpSpotifySong"></div>
+                        <div class="dp-spotify-artist" id="dpSpotifyArtist"></div>
+                        <div class="dp-spotify-album" id="dpSpotifyAlbum"></div>
+                    </div>
+                </div>
+                <div class="dp-spotify-bar-wrap" id="dpSpotifyBarWrap" style="display:none">
+                    <div class="dp-spotify-time-left" id="dpSpotifyTimeLeft">0:00</div>
+                    <div class="dp-spotify-bar">
+                        <div class="dp-spotify-bar-fill" id="dpSpotifyBarFill"></div>
+                    </div>
+                    <div class="dp-spotify-time-right" id="dpSpotifyTimeRight">0:00</div>
+                </div>
+            </div>
+
+            <div class="dp-actions">
+                <span class="dp-roblox-btn" onclick="window.open('https://www.roblox.com/users/9148611675/profile','_blank')">
+                    <svg viewBox="0 0 60 60" fill="none" width="14" height="14"><path d="M12.5 0L0 47.5L47.5 60L60 12.5L12.5 0ZM35.3 38.2L21.8 34.6L25.4 21.1L38.9 24.7L35.3 38.2Z" fill="currentColor"/></svg>
+                    Roblox Profile
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="project-section" id="project">
+    <div class="section-header">
+        <div class="tag">Featured Project</div>
+        <h2>Project: <span style="background:linear-gradient(135deg,#9b7fbf,#6d4f99);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Xploit SS</span></h2>
+        <p>Server-side execution built for experimentation</p>
+    </div>
+    <div class="project-inner">
+        <div class="project-text" data-anim>
+            <p>Project: Xploit SS is an SS / CS Executor game built for experimentation and control of LUAU code. Use in-game executors to run scripts, test mechanics, and manipulate the server environment. Designed for those who want full control over game logic, Xploit SS provides a sandboxed environment where you can push LUAU to its limits — execute arbitrary code, hook into server-side events, and explore the inner workings of Roblox's runtime.</p>
+            <div class="project-features">
+                <span class="pf-tag">Server-Side</span>
+                <span class="pf-tag">LUAU</span>
+                <span class="pf-tag">Real-Time</span>
+                <span class="pf-tag">Sandboxed</span>
+                <span class="pf-tag">Script Hub</span>
+                <span class="pf-tag">Auto-Update</span>
+            </div>
+            <span class="project-play-btn" onclick="window.open('https://www.roblox.com/games/139142346626255/Project-Xploit-SS','_blank')">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                Play on Roblox
+            </span>
+        </div>
+        <div class="project-code-area" data-anim>
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="dots"><span></span><span></span><span></span></div>
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" onclick="switchTab('require', this)">Require</button>
+                        <button class="tab-btn" onclick="switchTab('example', this)">Example</button>
+                        <button class="tab-btn" onclick="switchTab('output', this)">Output</button>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-tab active" id="tab-require">
+                        <div class="terminal-line">
+                            <span class="line-num">1</span>
+                            <span class="comment">-- Load Xploit SS</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="line-num">2</span>
+                            <span class="keyword">require</span><span class="func">(</span><span class="number">placeholderid</span><span class="func">)</span>
+                        </div>
+                    </div>
+                    <div class="terminal-tab" id="tab-example">
+                        <div class="terminal-line">
+                            <span class="line-num">1</span>
+                            <span class="comment">-- Example usage</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="line-num">2</span>
+                            <span class="keyword">local</span> <span class="func">ss</span> = <span class="keyword">require</span><span class="func">(</span><span class="number">placeholderid</span><span class="func">)</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="line-num">3</span>
+                            <span class="func">ss</span>:<span class="func">Execute</span>(<span class="string">"print('hello')"</span>)
+                        </div>
+                    </div>
+                    <div class="terminal-tab" id="tab-output">
+                        <div class="terminal-line">
+                            <span class="line-num">></span>
+                            <span style="color:rgba(87,242,135,0.5)">Xploit SS loaded successfully</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="line-num">></span>
+                            <span style="color:rgba(87,242,135,0.4)">Connected to server</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="line-num">></span>
+                            <span style="color:rgba(255,255,255,0.2)">Ready for execution...</span>
+                        </div>
+                        <div class="terminal-line" style="margin-top:10px">
+                            <span class="line-num">></span>
+                            <span style="color:rgba(140,120,200,0.4)" class="typing-cursor">_</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="terminal-footer">
+                    <span class="status">luau • utf-8</span>
+                    <button class="copy-code-btn" onclick="copyCode(this)">
+                        <svg viewBox="0 0 24 24"><path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 5 6 5.9 6 7v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                        Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cards-section" id="community">
+    <div class="section-header">
+        <div class="tag">Connect</div>
+        <h2>Join The Community</h2>
+        <p>Find us across platforms</p>
+    </div>
+    <div class="cards-container">
+        <div class="link-card" data-anim data-tilt>
+            <div class="card-glow"></div>
+            <div class="card-visual">
+                <img src="/assets/images/rbx.png" alt="Roblox Game" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-icon').style.display='block'">
+                <div class="placeholder-icon" style="display:none">🎮</div>
+                <div class="card-overlay"></div>
+                <div class="card-type">Game</div>
+            </div>
+            <div class="card-body">
+                <h3>Roblox Game</h3>
+                <p>Jump into Project: Xploit SS and experience server-side execution firsthand.</p>
+                <span class="card-btn" onclick="window.open('https://www.roblox.com/games/139142346626255/Project-Xploit-SS','_blank')">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    Play Now
+                </span>
+            </div>
+        </div>
+        <div class="link-card" data-anim data-tilt>
+            <div class="card-glow"></div>
+            <div class="card-visual" style="background:linear-gradient(135deg,rgba(88,101,242,0.1),rgba(60,70,180,0.05));display:flex;align-items:center;justify-content:center">
+                <svg width="70" height="54" viewBox="0 0 71 55" fill="none" style="opacity:0.25">
+                    <path d="M60.1 4.9C55.6 2.8 50.7 1.3 45.7 0.4C45.6 0.4 45.5 0.4 45.4 0.5C44.8 1.6 44.1 3.1 43.6 4.2C38.2 3.4 32.7 3.4 27.4 4.2C26.9 3.1 26.2 1.6 25.6 0.5C25.5 0.4 25.4 0.4 25.3 0.4C20.3 1.3 15.4 2.8 10.9 4.9C10.8 4.9 10.8 4.9 10.8 5.0C1.6 18.7-0.9 32.1 0.3 45.4C0.3 45.5 0.3 45.5 0.4 45.6C6.5 50.0 12.3 52.7 18.1 54.5C18.2 54.5 18.3 54.5 18.4 54.4C19.7 52.6 20.9 50.6 22.0 48.5C22.1 48.4 22.0 48.3 21.9 48.2C19.9 47.5 18.1 46.6 16.3 45.6C16.2 45.5 16.2 45.3 16.3 45.2C16.7 44.9 17.1 44.6 17.4 44.3C17.5 44.3 17.6 44.3 17.6 44.3C29.3 49.6 41.8 49.6 53.3 44.3C53.4 44.3 53.5 44.3 53.5 44.3C53.9 44.6 54.2 44.9 54.6 45.2C54.7 45.3 54.7 45.5 54.6 45.6C52.8 46.6 50.9 47.5 49.0 48.2C48.9 48.3 48.8 48.4 48.9 48.5C50.0 50.6 51.2 52.6 52.5 54.4C52.6 54.5 52.7 54.5 52.8 54.5C58.6 52.7 64.5 50.0 70.5 45.6C70.6 45.5 70.6 45.5 70.6 45.4C72.1 30.1 68.2 16.8 60.2 5.0C60.2 4.9 60.1 4.9 60.1 4.9ZM23.7 37.3C20.2 37.3 17.3 34.1 17.3 30.2C17.3 26.2 20.2 23.0 23.7 23.0C27.3 23.0 30.2 26.3 30.1 30.2C30.1 34.1 27.3 37.3 23.7 37.3ZM47.3 37.3C43.8 37.3 40.9 34.1 40.9 30.2C40.9 26.2 43.8 23.0 47.3 23.0C50.9 23.0 53.8 26.3 53.7 30.2C53.7 34.1 50.9 37.3 47.3 37.3Z" fill="#5865F2"/>
+                </svg>
+                <div class="card-overlay"></div>
+                <div class="card-type">Discord</div>
+            </div>
+            <div class="card-body">
+                <h3>Discord Server</h3>
+                <p>Join our Discord to chat, get updates, share scripts, and connect with other members.</p>
+                <span class="card-btn" onclick="window.open('https://discord.gg/vVJU3bxJdJ','_blank')">
+                    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    Join Server
+                </span>
+            </div>
+        </div>
+        <div class="link-card" data-anim data-tilt>
+            <div class="card-glow"></div>
+            <div class="card-visual" style="background:linear-gradient(135deg,rgba(90,50,120,0.1),rgba(60,30,90,0.05));display:flex;align-items:center;justify-content:center">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" style="opacity:0.2">
+                    <path d="M12.5 0L0 47.5L47.5 60L60 12.5L12.5 0ZM35.3 38.2L21.8 34.6L25.4 21.1L38.9 24.7L35.3 38.2Z" fill="#8a6abf"/>
+                </svg>
+                <div class="card-overlay"></div>
+                <div class="card-type">Group</div>
+            </div>
+            <div class="card-body">
+                <h3>Roblox Group</h3>
+                <p>Join our official Roblox group for exclusive perks, updates, and early access to projects.</p>
+                <span class="card-btn" onclick="window.open('https://www.roblox.com/communities/107695947/Team-Inverted#!/','_blank')">
+                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    Join Group
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <img src="/assets/images/invertedhq.png" alt="Inverted">
+                <span>Inverted HQ</span>
+            </div>
+            <p>A Roblox community pushing the boundaries of exploiting, glitching, and game manipulation.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Links</h4>
+            <span onclick="window.open('https://discord.gg/vVJU3bxJdJ','_blank')">Discord</span>
+            <span onclick="window.open('https://www.roblox.com/games/139142346626255/Project-Xploit-SS','_blank')">Roblox Game</span>
+            <span onclick="window.open('https://www.roblox.com/communities/107695947/Team-Inverted#!/','_blank')">Roblox Group</span>
+        </div>
+        <div class="footer-links">
+            <h4>Projects</h4>
+            <span onclick="window.open('https://www.roblox.com/games/139142346626255/Project-Xploit-SS','_blank')">Xploit SS</span>
+            <span onclick="window.open('https://discord.gg/vVJU3bxJdJ','_blank')">Script Library</span>
+            <span onclick="window.open('https://discord.gg/vVJU3bxJdJ','_blank')">Tools</span>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Inverted HQ &mdash; All Rights Reserved</p>
+    </div>
+</div>
+
+<script src="/assets/cdn/main.js"></script>
+</body>
+</html>
