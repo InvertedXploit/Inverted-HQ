@@ -42,19 +42,12 @@
                 <span class="text-purple">HQ</span>
             </h1>
             <p class="hero-desc">
-                Inverted HQ is a Roblox-focused community dedicated to LuaU scripting, server-side mechanics, tool development, and advanced game experimentation. We share knowledge, tools, and resources for those interested in understanding and extending Roblox's engine capabilities.
+                Inverted HQ is a Roblox community focused on LuaU scripting, server-side mechanics, tool development, and advanced game experimentation. We share knowledge, tools, and resources for those interested in understanding and extending Roblox engine capabilities.
             </p>
         </div>
         <div class="hero-actions">
             <span class="btn-primary" onclick="window.open('https://discord.gg/vVJU3bxJdJ','_blank')">Join Community</span>
             <span class="btn-secondary" onclick="smoothNav('#project')">View Project</span>
-        </div>
-        <div class="hero-script-box">
-            <div class="script-box-label">Quick Load</div>
-            <div class="script-box">
-                <code id="heroScript">require(placeholderid)</code>
-                <button class="copy-btn" onclick="copyText('require(placeholderid)', this)">Copy</button>
-            </div>
         </div>
         <div class="scroll-indicator" onclick="smoothNav('#features')">
             <div class="mouse"></div>
@@ -95,7 +88,7 @@
     <section class="features-section" id="features">
         <div class="section-header">
             <div class="tag">Resources</div>
-            <h2>Tools & Support</h2>
+            <h2>Features</h2>
             <p>Resources designed for LuaU developers and advanced Roblox users</p>
         </div>
         <div class="features-grid">
@@ -123,6 +116,11 @@
                 <div class="feature-icon"><span class="material-icons">rss_feed</span></div>
                 <h3>Updates & News</h3>
                 <p>Regular updates on LuaU changes, tools, and community developments.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">numbers</span></div>
+                <h3>5000+ Requires</h3>
+                <p>(Requires Executed)</p>
             </div>
         </div>
     </section>
@@ -163,8 +161,8 @@
                         </div>
                     </div>
                     <div class="terminal-footer">
-                        <span class="status">luau • utf-8</span>
-                        <button class="copy-code-btn" onclick="copyCode(this)">
+                        <span class="status">luau</span>
+                        <button class="copy-code-btn" onclick="copyToClipboard('require(placeholderid)', this)">
                             <svg viewBox="0 0 24 24"><path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 5 6 5.9 6 7v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
                             Copy
                         </button>
@@ -195,27 +193,34 @@
                     </span>
                 </div>
             </div>
+
             <div class="link-card">
                 <div class="card-visual" style="background:linear-gradient(135deg,rgba(88,101,242,0.1),rgba(60,70,180,0.05));display:flex;align-items:center;justify-content:center">
-                    <!-- Discord SVG kept minimal -->
+                    <svg width="70" height="54" viewBox="0 0 71 55" fill="none" style="opacity:0.25">
+                        <path d="M60.1 4.9C55.6 2.8 50.7 1.3 45.7 0.4C45.6 0.4 45.5 0.4 45.4 0.5C44.8 1.6 44.1 3.1 43.6 4.2C38.2 3.4 32.7 3.4 27.4 4.2C26.9 3.1 26.2 1.6 25.6 0.5C25.5 0.4 25.4 0.4 25.3 0.4C20.3 1.3 15.4 2.8 10.9 4.9C10.8 4.9 10.8 4.9 10.8 5.0C1.6 18.7-0.9 32.1 0.3 45.4C0.3 45.5 0.3 45.5 0.4 45.6C6.5 50.0 12.3 52.7 18.1 54.5C18.2 54.5 18.3 54.5 18.4 54.4C19.7 52.6 20.9 50.6 22.0 48.5C22.1 48.4 22.0 48.3 21.9 48.2C19.9 47.5 18.1 46.6 16.3 45.6C16.2 45.5 16.2 45.3 16.3 45.2C16.7 44.9 17.1 44.6 17.4 44.3C17.5 44.3 17.6 44.3 17.6 44.3C29.3 49.6 41.8 49.6 53.3 44.3C53.4 44.3 53.5 44.3 53.5 44.3C53.9 44.6 54.2 44.9 54.6 45.2C54.7 45.3 54.7 45.5 54.6 45.6C52.8 46.6 50.9 47.5 49.0 48.2C48.9 48.3 48.8 48.4 48.9 48.5C50.0 50.6 51.2 52.6 52.5 54.4C52.6 54.5 52.7 54.5 52.8 54.5C58.6 52.7 64.5 50.0 70.5 45.6C70.6 45.5 70.6 45.5 70.6 45.4C72.1 30.1 68.2 16.8 60.2 5.0C60.2 4.9 60.1 4.9 60.1 4.9ZM23.7 37.3C20.2 37.3 17.3 34.1 17.3 30.2C17.3 26.2 20.2 23.0 23.7 23.0C27.3 23.0 30.2 26.3 30.1 30.2C30.1 34.1 27.3 37.3 23.7 37.3ZM47.3 37.3C43.8 37.3 40.9 34.1 40.9 30.2C40.9 26.2 43.8 23.0 47.3 23.0C50.9 23.0 53.8 26.3 53.7 30.2C53.7 34.1 50.9 37.3 47.3 37.3Z" fill="#5865F2"/>
+                    </svg>
                     <div class="card-type">Discord</div>
                 </div>
                 <div class="card-body">
                     <h3>Discord Server</h3>
-                    <p>Discuss scripts, tools, and LuaU with other members.</p>
+                    <p>Join our Discord to chat, get updates, share scripts, and connect with other members.</p>
                     <span class="card-btn" onclick="window.open('https://discord.gg/vVJU3bxJdJ','_blank')">
                         <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
                         Join Server
                     </span>
                 </div>
             </div>
+
             <div class="link-card">
                 <div class="card-visual" style="background:linear-gradient(135deg,rgba(90,50,120,0.1),rgba(60,30,90,0.05));display:flex;align-items:center;justify-content:center">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" style="opacity:0.2">
+                        <path d="M12.5 0L0 47.5L47.5 60L60 12.5L12.5 0ZM35.3 38.2L21.8 34.6L25.4 21.1L38.9 24.7L35.3 38.2Z" fill="#8a6abf"/>
+                    </svg>
                     <div class="card-type">Group</div>
                 </div>
                 <div class="card-body">
                     <h3>Roblox Group</h3>
-                    <p>Official group for updates and access to projects.</p>
+                    <p>Join our official Roblox group for exclusive perks, updates, and early access to projects.</p>
                     <span class="card-btn" onclick="window.open('https://www.roblox.com/communities/107695947/Team-Inverted#!/','_blank')">
                         <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
                         Join Group
@@ -239,12 +244,30 @@
                 <span onclick="window.open('https://discord.gg/vVJU3bxJdJ','_blank')">Discord</span>
                 <span onclick="window.open('https://www.roblox.com/games/139142346626255/Project-Xploit-SS','_blank')">Roblox Experience</span>
                 <span onclick="window.open('https://www.roblox.com/communities/107695947/Team-Inverted#!/','_blank')">Roblox Group</span>
+                <span onclick="window.open('https://www.youtube.com/@YourChannelHere','_blank')">YouTube</span>
             </div>
         </div>
         <div class="footer-bottom">
             <p>© 2026 Inverted HQ — All Rights Reserved</p>
         </div>
     </div>
+
+    <script>
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2000);
+            }).catch(err => {
+                console.error('Copy failed:', err);
+                alert('Failed to copy — please copy manually.');
+            });
+        }
+
+        function smoothNav(target) {
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 
     <script src="assets/cdn/main.js"></script>
 </body>
